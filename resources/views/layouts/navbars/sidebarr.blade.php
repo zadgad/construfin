@@ -44,7 +44,7 @@
                         <div class="submenu-content">
                             <a id="depst5" style="display: none" href="{{route('regiempre')}}" class="menu-item">Registrar Empresa</a>
                             <a id="depst6" style="display: none" href="{{route('empresas')}}" class="menu-item">Empresas registrados</a>
-                            {{-- <a id="depst7" style="display: none" href="{{route('empempl')}}" class="menu-item">Empresas y Empleados</a> --}}
+                        <a id="depst7" style="display: none" href="{{route('empempl')}}" class="menu-item">Empresas y Empleados</a>
                             <a id="depst8" style="display: none" href="{{route('formugene')}}" class="menu-item">Formulario General</a>
 
                         </div>

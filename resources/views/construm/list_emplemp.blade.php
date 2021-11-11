@@ -44,7 +44,7 @@
                     <div class="card-header">
                         <h3>Lista de Empresas y Clientes</h3>
                     </div>
-                    <a href="" class="btn btn-sm btn-primary">{{ __('Añadir Empresa') }}</a>
+                    {{-- <a href="" class="btn btn-sm btn-primary">{{ __('Añadir Empresa') }}</a> --}}
 
                     <div class="card-body">
                         <div class="dt-responsive">
@@ -78,9 +78,15 @@
                                           </th>
                                           <th class="text-center">
                                             {{ __('Nombre Cli.') }}
+                                         </th>
+                                          <th class="text-center">
+                                            {{ __('Accion') }}
                                           </th>
-                                        </tr>
-                                </thead>
+
+                                       </tr>
+                                       
+                                       
+                                      </thead>
                                 <tbody>
                                     @foreach($selec as $sel)
                                     <tr>
@@ -116,6 +122,20 @@
                                   <td class="text-center">
                                     {{ $sel->nombre }}
                                   </td>
+                                   <td class="td-actions text-right">
+                                       @if ($sel->id_usr != session()->get('id')->first())
+                                       <form action={{-- "{{ route('user.destroy', $user) }}" --}}  method="post">
+                                             @csrf
+                                             @method('delete')
+
+                                             <a  href="{{route('editaruser',$id=$sel->id_usr)}}"><i class="ik ik-edit f-16 mr-15 text-green"></i></a>
+                                            <a href="{{ route('deleteUs',$id=$sel->id_usr) }}" ><i class="ik ik-trash-2 f-16 text-red"></i></a>
+
+                                         </form>
+                                       @else
+                                       <a  href="{{route('infoRut',$sel->id_usr)}}"><i class="ik ik-edit f-16 mr-15 text-green"></i></a>
+                                       @endif
+                                     </td>
                              @endforeach
                                 </tbody>
                                 <tfoot>
@@ -146,6 +166,9 @@
                                           </th>
                                           <th class="text-center">
                                             {{ __('Nombre Cli.') }}
+                                         </th>
+                                           <th class="text-center">
+                                            {{ __('Accion') }}
                                           </th>
                                         </tr>
                                 </tfoot>

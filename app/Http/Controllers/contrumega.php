@@ -49,7 +49,7 @@ public function emplempresa(){
         $maxs=Rol::max('id_rol');
         if(session()->get('user_rol')->first()<=$maxs){
 
-            $selec=DB::table('empresa')->join('usr','id_usr','usr_id')->join('persona','ci','ci_per')->where('activo_em','=',1)->select('id_emp','empresa.nomb_emp','empresa.nit','empresa.direccion','empresa.telefon','empresa.ciudad','empresa.imagen','persona.ci','persona.nombre')->get();
+            $selec=DB::table('empresa')->join('usr','id_usr','usr_id')->join('persona','ci','ci_per')->where('activo_em','=',1)->select('id_emp','empresa.nomb_emp','empresa.nit','empresa.direccion','empresa.telefon','empresa.ciudad','empresa.imagen','persona.ci','persona.nombre','usr.id_usr')->get();
             return view('construm.list_emplemp',compact('selec'));
         }else
         return redirect()->route('login')
@@ -456,9 +456,11 @@ public function intgeneral(Request $request){
         $maxs=Rol::max('id_rol');
         if(session()->get('user_rol')->first()<=$maxs){
                 $ides=$id;
-           
+                 $id_us=DB::table(empresa)->where('id_emp','=',$ids)->select('usr_id')->get();
+                    dd($id_us);
                 $updateemp=DB::table(empresa)->where('id_emp','=',$ids)->update(['activo_em'=>0]);
-                  return redirect()->route('empresas')->with('info');
+               
+                return redirect()->route('empresas')->with('info');
 
         }else
         return redirect()->route('login')
