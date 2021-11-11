@@ -85,7 +85,6 @@
                   <div class="carousel-content">
                     <h2>Material de Construccion</h2>
                     <p>Encuentra: Tuberia de gas, agua y desagüe. Calefacción por el piso, membranas acústicas e impermeables. Inodoros, lavamanos, duchas, griferia, hidromasajes, termotanques, anafes, calefón, calderas, hornos, estufas.</p>
-                      <a href="{{ route('registro') }}" class="btn-get-started scrollto">Registrarse</a>
 
                   </div>
                 </div>
@@ -97,7 +96,6 @@
                   <div class="carousel-content">
                     <h2>Material</h2>
                     <p>Las estructuras de la casa se componen de una serie de elementos, que en este caso los describiremos, como ejemplo de su cálculo: de concreto armado, columnas, losa maciza, viguetas, bovedillas y demás. </p>
-                    <a href="{{ route('registro') }}" class="btn-get-started scrollto">Registrarse</a>
                   </div>
                 </div>
               </div>
@@ -108,7 +106,6 @@
                   <div class="carousel-content">
                     <h2>Quienes Somos</h2>
                     <p>En Construmega Srl nos dedicamos a la importación de productos de construcción de alta calidad producidos principalmente en Argentina y México. Nuestra Sede Central se encuentra en Tarija Bolivia al 2020 contamos con una experiencia de mas de 5 años en el mercado. Somos una organización capaz de cumplir tus expectativas en el sector de la construcción, en base a tres puntales fundamentales.</p>
-                    <a href="{{ route('registro') }}" class="btn-get-started scrollto">Registrarse</a>
                   </div>
                 </div>
               </div>
@@ -122,7 +119,6 @@
                     <p>Tarija: Barrio San Geronimo Av. Alto de la Alianza
                         Cochabamba: José Antonio Zegada 1885-1849, Cochabamba
                         La Paz:</p>
-                    <a href="{{ route('registro') }}" class="btn-get-started scrollto">Registrarse</a>
                   </div>
                 </div>
               </div>
@@ -133,7 +129,6 @@
                   <div class="carousel-content">
                     <h2>MATERIALES DE CONSTRUCCIÓN</h2>
                     <p>Los materiales de construcción son los productos, subproductos y materias primas empleados en la fabricación de edificaciones y obras civiles. Sus características y propiedades son determinantes en la definición de las cualidades físicas de la construcción en sí, así como el método constructivo, equipos y mano de obra necesarios para desarrollarla.</p>
-                    <a href="{{ route('registro') }}" class="btn-get-started scrollto">Registrarse</a>
                   </div>
                 </div>
               </div>
@@ -155,7 +150,7 @@
 
         <div class="container">
           <div class="copyright">
-            &copy; Copyright <strong>SistemCon</strong>. Todos Los Derechos Reservados Zadbrack
+            &copy; Copyright <strong>SistemCon</strong>. Todos Los Derechos Reservados ENDZO.SYTEM
           </div>
           <div class="credits">
             <!--

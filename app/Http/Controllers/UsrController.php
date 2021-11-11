@@ -30,11 +30,12 @@ class UsrController extends Controller
             if(session()->get('user_rol')->first()<=$maxs){
                 $idus=session()->get('user_rol');
                 if($idus[0] == 1){
-                    $rols=DB::table('rol')->where('rol.id_rol', '>', 1)-> select('id_rol', 'ro')->get();
+                    $rols=DB::table('rol')->where('rol.id_rol', '=', 2)-> select('id_rol', 'ro')->get();
                     return view('admin.añadirU', compact('rols'));
                 }
                  else{
-                    $rols=DB::table('rol')->where('rol.id_rol', '>', 2)-> select('id_rol', 'ro')->get();
+                   
+                    $rols=DB::table('rol')->where('rol.id_rol', '=', 3)-> select('id_rol', 'ro')->get();
                     return view('admin.añadirU', compact('rols'));
                 }
             }else
@@ -49,14 +50,15 @@ class UsrController extends Controller
             $maxs=Rol::max('id_rol');
             if(session()->get('user_rol')->first()<=$maxs){
                 $idus=session()->get('user_rol');
+                                    $rol=$id;
                 if($idus[0] == 1){
-                    $rol=$id;
-                    $rols=DB::table('rol')->where('rol.id_rol', '>', 1)-> select('id_rol', 'ro')->get();
-                    return view('users.create',compact('rol'));
+                    $rols=DB::table('rol')->where('rol.id_rol', '>', 1)->where('rol.id_rol', '<', 4)-> select('id_rol', 'ro')->get();
+                    return view('users.create',compact('rol','rols'));
                 }
                  else{
-                    $rol=DB::table('rol')->where('rol.id_rol', '>', 2)-> select('id_rol', 'ro')->get();
-                    return view('users.create',compact('rol'));
+
+                    $rolsdd=DB::table('rol')->where('rol.id_rol', '=', 3)-> select('id_rol', 'ro')->get();
+                    return view('users.create',compact('rol','rols'));
                 }
             }else
             return redirect()->route('login')
@@ -100,7 +102,7 @@ class UsrController extends Controller
                 }
                 $idus=session()->get('user_rol');
                 if($idus[0] == 1){
-                    $rols=DB::table('rol')->where('rol.id_rol', '>', 1)-> select('id_rol', 'ro')->get();
+                    $rols=DB::table('rol')->where('rol.id_rol', '=', 2)-> select('id_rol', 'ro')->get();
                     return view('superU.lisUs', compact('rols','users'));
                 }
                 else{

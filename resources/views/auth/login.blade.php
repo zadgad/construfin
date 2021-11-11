@@ -66,7 +66,7 @@
                 <button  type = "submit" class="btn btn-primary btn-round btn-lg btn-block mb-3">{{ __('Iniciar Sesion') }}</button>
                 <div class="pull-left">
                     <h6>
-                    <a href="{{ route('registro') }}" class="link footer-link">{{ __('Crear Cuenta') }}</a>
+                    {{-- <a href="{{ route('registro') }}" class="link footer-link">{{ __('Crear Cuenta') }}</a> --}}
                     </h6>
                 </div>
                 <div class="pull-right">

@@ -248,11 +248,14 @@ public function formulgen(){
             if($idus[0] == 1){
                 $rol=4;
                 $rols=DB::table('rol')->where('rol.id_rol', '>', 1)-> select('id_rol', 'ro')->get();
+                
                 return view('construm.formugen',compact('rol'));
             }
              else{
-                $rol=DB::table('rol')->where('rol.id_rol', '>', 2)-> select('id_rol', 'ro')->get();
-                return view('users.create',compact('rol'));
+                                 $rol=4;
+                $rols=DB::table('rol')->where('rol.id_rol', '>', 2)-> select('id_rol', 'ro')->get();
+                return view('construm.formugen',compact('rol'));
+
             }
         }else
         return redirect()->route('login')

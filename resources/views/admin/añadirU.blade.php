@@ -54,8 +54,8 @@
                                  <div class="form-group row">
                                         <label for="exampleInputUsername2" class="col-sm-3 col-form-label">{{ __('Nombres') }}</label>
                                         <div class="col-sm-9">
-                                          <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                            <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="input-name" type="text" placeholder="{{ __('Nombre') }}" value="{{ old('name') }}" minlength="4" maxlength="25" required="true" aria-required="true"/>
+                                         <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                                            <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" minlength="2" maxlength="40" required  name="name" id="input-name" type="text" placeholder="{{ __('Nombre') }}" value="{{ old('name') }}" minlength="4" maxlength="25" required="true" aria-required="true"/>
                                             @if ($errors->has('name'))
                                               <span id="name-error" class="error text-danger" for="input-name">{{ $errors->first('name') }}</span>
                                             @endif
@@ -67,7 +67,7 @@
                                         <label for="exampleInputUsername2" class="col-sm-3 col-form-label">{{ __('Apellido Pat.') }}</label>
                                         <div class="col-sm-9">
                                           <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                            <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="apelliP" id="input-name" type="text" placeholder="{{ __('Apellido Paterno') }}" value="{{ old('name') }}" required="true" minlength="4" maxlength="25" minlength="4" maxlength="25" aria-required="true"/>
+                                            <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" minlength="2" maxlength="40" required  name="apelliP" id="input-name" type="text" placeholder="{{ __('Apellido Paterno') }}" value="{{ old('name') }}" required="true" minlength="4" maxlength="25" minlength="4" maxlength="25" aria-required="true"/>
                                             @if ($errors->has('name'))
                                               <span id="name-error" class="error text-danger" for="input-name">{{ $errors->first('name') }}</span>
                                             @endif
@@ -78,7 +78,7 @@
                                         <label for="exampleInputUsername2" class="col-sm-3 col-form-label">{{ __('Apellido Mat.') }}</label>
                                         <div class="col-sm-9">
                                           <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                            <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="apelliM" id="input-name" type="text" placeholder="{{ __('Apellido Materno') }}" value="{{ old('name') }}" required="true" minlength="4" maxlength="25" aria-required="true"/>
+                                            <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" minlength="2" maxlength="40" required  name="apelliM" id="input-name" type="text" placeholder="{{ __('Apellido Materno') }}" value="{{ old('name') }}" required="true" minlength="4" maxlength="25" aria-required="true"/>
                                             @if ($errors->has('name'))
                                               <span id="name-error" class="error text-danger" for="input-name">{{ $errors->first('name') }}</span>
                                             @endif
@@ -89,7 +89,7 @@
                                         <label for="exampleInputUsername2" class="col-sm-3 col-form-label">{{ __('CI') }}</label>
                                         <div class="col-sm-9">
                                           <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                            <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="CI" id="input-name" type="text" patter="" placeholder="{{ __('Numero De Cedula De Identidad') }}" value="{{ old('CI') }}" required="true"  aria-required="true"/>
+                                            <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" minlength="6" maxlength="12" required  name="CI" id="input-name" type="text" patter="" placeholder="{{ __('Numero De Cedula De Identidad') }}" value="{{ old('CI') }}" required="true"  aria-required="true"/>
                                             @if ($errors->has('name'))
                                               <span id="name-error" class="error text-danger" for="input-name">{{ $errors->first('name') }}</span>
                                             @endif
@@ -100,7 +100,7 @@
                                         <label for="exampleInputUsername2" class="col-sm-3 col-form-label">{{ __('Email') }}</label>
                                         <div class="col-sm-9">
                                           <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                                            <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="email" placeholder="{{ __('Email') }}" value="{{ old('email') }}" minlength="4" maxlength="25" required />
+                                            <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" minlength="5" maxlength="40" required  name="email" id="input-email" type="email" placeholder="{{ __('Email') }}" value="{{ old('email') }}" minlength="4" maxlength="25" required />
                                             @if ($errors->has('email'))
                                               <span id="email-error" class="error text-danger" for="input-email">{{ $errors->first('email') }}</span>
                                             @endif

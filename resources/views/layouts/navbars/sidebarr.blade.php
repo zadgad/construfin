@@ -32,32 +32,32 @@
                     <div class="submenu-content">
                         <a id="depst0" style="display: none" href="{{route('formulario')}}" class="menu-item">Añadir Usuario</a>
                         <a id="depst1" style="display: none" href="{{route('list_ad')}}" class="menu-item">Lista de Administradores</a>
-                        <a id="depst2" style="display: none" href="{{route('list_em')}}" class="menu-item">Lista de Empledos</a>
+                        <a id="depst2" style="display: none" href="{{route('list_em')}}" class="menu-item">Lista de Empleados</a>
                         <a id="depst3" style="display: none" href="{{route('list')}}" class="menu-item">Lista de Clientes</a>
                         <a id="depst4" style="display: none" href="{{route('listUs')}}" class="menu-item">Lista de Usuarios Goblal</a>
 
                     </div>
                 </div>
                 <div class="nav-item has-sub" id="depst9" style="display: none">
-                    <a href="#"><i class="ik ik-bar-chart-2"></i><span>Empresa</span></a>
+                    <a href="#"><i class="ik ik-bar-chart-2"></i><span>Empresas En Sistema</span></a>
                     <div class="submenu-content">
                         <div class="submenu-content">
                             <a id="depst5" style="display: none" href="{{route('regiempre')}}" class="menu-item">Registrar Empresa</a>
                             <a id="depst6" style="display: none" href="{{route('empresas')}}" class="menu-item">Empresas registrados</a>
-                            <a id="depst7" style="display: none" href="{{route('empempl')}}" class="menu-item">Empresas y Empleados</a>
-                            <a id="depst8" style="display: none" href="{{route('formugene')}}" class="menu-item">Formulari General</a>
+                            {{-- <a id="depst7" style="display: none" href="{{route('empempl')}}" class="menu-item">Empresas y Empleados</a> --}}
+                            <a id="depst8" style="display: none" href="{{route('formugene')}}" class="menu-item">Formulario General</a>
 
                         </div>
                     </div>
                 </div>
                 <div class="nav-item has-sub" id="depst14" style="display: none">
-                    <a href="#"><i class="ik ik-bar-chart-2"></i><span>Visistas</span></a>
+                    <a href="#"><i class="ik ik-truck"></i><span>Visistas</span></a>
                     <div class="submenu-content">
                         <div class="submenu-content">
                             <a id="depst10" style="display: none"  href="{{route('visitas')}}" class="menu-item">Visitar Clientes</a>
-                            <a id="depst11" style="display: none"  href="{{route('designarV')}}" class="menu-item">Desiganar Visita</a>
+                            <a id="depst11" style="display: none"  href="{{route('designarV')}}" class="menu-item">Designar Visita</a>
                             <a id="depst12" style="display: none"  href="{{route('solitvisita')}}" class="menu-item">Solicitar Visita</a>
-                            <a id="depst13" style="display: none"  href="{{route('prueba')}}" class="menu-item">Empresa</a>
+                            <a id="depst13" style="display: none"  href="{{route('prueba')}}" class="menu-item">Empresas</a>
                         </div>
                     </div>
                 </div>

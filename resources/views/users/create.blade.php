@@ -39,7 +39,6 @@
                 </div>
             </div>
         </div>
-
         <div  class="row">
             <div class="col-md-8">
                 <div class="card">

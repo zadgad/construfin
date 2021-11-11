@@ -17,11 +17,11 @@
             <i class="now-ui-icons design_app"></i> {{ __('Pagina de Inicio') }}
           </a>
         </li>
-        <li class="nav-item{{ $activePage == 'register' ? ' active' : '' }}">
+        {{-- <li class="nav-item{{ $activePage == 'register' ? ' active' : '' }}">
           <a href="{{ route('registro') }}" class="nav-link">
             <i class="now-ui-icons tech_mobile"></i> {{ __('Registro') }}
           </a>
-        </li>
+        </li> --}}
         <li class="nav-item{{ $activePage == 'login' ? ' active' : '' }}">
           <a href="{{ route('login') }}" class="nav-link">
             <i class="now-ui-icons users_circle-08"></i> {{ __('Login') }}
