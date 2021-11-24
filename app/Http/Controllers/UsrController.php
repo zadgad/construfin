@@ -34,7 +34,7 @@ class UsrController extends Controller
                     return view('admin.añadirU', compact('rols'));
                 }
                  else{
-                   
+
                     $rols=DB::table('rol')->where('rol.id_rol', '=', 3)-> select('id_rol', 'ro')->get();
                     return view('admin.añadirU', compact('rols'));
                 }
@@ -600,6 +600,22 @@ class UsrController extends Controller
                      'usr.foto'
                  )->first();
 
+                 if($users->ro=='Admin'){
+                    $rols=DB::table('rol')->where('rol.id_rol', '=', 2)-> select('id_rol', 'ro')->get();
+                    return view('iditU.editU',compact('users','rols'));
+
+                }
+
+                 if($users->ro=='Empleado'){
+                    $rols=DB::table('rol')->where('rol.id_rol', '=', 3)-> select('id_rol', 'ro')->get();
+                    return view('iditU.editU',compact('users','rols'));
+
+                }
+                    if($users->ro =='Cliente'){
+                        $rols=DB::table('rol')->where('rol.id_rol', '=', 4)-> select('id_rol', 'ro')->get();
+                        return view('iditU.editU',compact('users','rols'));
+
+                    }
                 return view('iditU.editU',compact('users','rols'));
 
             }else
@@ -823,7 +839,8 @@ class UsrController extends Controller
                     $us=DB::table('usr')->where('id_usr','=',$id)->update(['ci_per'=>'0','email'=>$email,'login'=>$email]);
                     $aux=DB::table('persona')->where('ci','=',$select)->first('nombre');
                     $del=DB::table('usr_rol')->where('usr_id','=',$id)->delete();
-                    
+                    $updateemp=DB::table('empresa')->where('usr_id','=',$id)->update(['activo_em'=>0,'nit'=>$id]);
+
                         if($rol->rol_id==2){
                                 return redirect()->route('list_ad');
                         }
@@ -831,7 +848,7 @@ class UsrController extends Controller
                                 return redirect()->route('list_em');
                         }
                         if($rol->rol_id==4){
-                                return redirect()->route('list');
+                                return redirect()->route('empempl');
                         }
 
             }else
@@ -852,7 +869,7 @@ class UsrController extends Controller
      */
     public function update(Request $request, Usr $usr)
     {
-    
+
     }
 
     /**

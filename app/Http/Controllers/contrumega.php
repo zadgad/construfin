@@ -49,7 +49,7 @@ public function emplempresa(){
         $maxs=Rol::max('id_rol');
         if(session()->get('user_rol')->first()<=$maxs){
 
-            $selec=DB::table('empresa')->join('usr','id_usr','usr_id')->join('persona','ci','ci_per')->where('activo_em','=',1)->select('id_emp','empresa.nomb_emp','empresa.nit','empresa.direccion','empresa.telefon','empresa.ciudad','empresa.imagen','persona.ci','persona.nombre','usr.id_usr')->get();
+            $selec=DB::table('empresa')->join('usr','id_usr','usr_id')->join('persona','ci','ci_per')->where('activo_em','=',1)->select('id_emp','empresa.nomb_emp','empresa.nit','empresa.direccion','empresa.telefon','empresa.ciudad','empresa.imagen','persona.ci','persona.nombre','usr.id_usr','usr.telefono')->get();
             return view('construm.list_emplemp',compact('selec'));
         }else
         return redirect()->route('login')
@@ -111,7 +111,7 @@ public function vistaremp(){
             $idus=session()->get('id')->first();
             $counts=DB::table('empresa')->join('agendar_visita','empre_id','id_emp')->where('usr_id','=',$idus)->where('visit','=',1)->count();
             $bol=DB::table('agendar_visita')->join('empresa','id_emp','empre_id')->where('usr_id','=',$idus)->pluck('visit');
-            $selec=DB::table('empresa')->join('agendar_visita','empre_id','id_emp')->join('usr','id_usr','usr_id')->join('persona','ci','ci_per')->where('visit','=',1)->where('usrid','=',$idus)->select('id_emp','empresa.nomb_emp','empresa.nit','empresa.direccion','empresa.telefon','empresa.ciudad','empresa.imagen','persona.ci','persona.nombre')->get();
+            $selec=DB::table('empresa')->join('agendar_visita','empre_id','id_emp')->join('usr','id_usr','usr_id')->join('persona','ci','ci_per')->where('activo_em','=',1)->where('visit','=',1)->where('usrid','=',$idus)->select('id_emp','empresa.nomb_emp','empresa.nit','empresa.direccion','empresa.telefon','empresa.ciudad','empresa.imagen','persona.ci','persona.nombre')->get();
             return view('construm.visitas',compact('selec','counts'));
 
         }else
@@ -248,7 +248,7 @@ public function formulgen(){
             if($idus[0] == 1){
                 $rol=4;
                 $rols=DB::table('rol')->where('rol.id_rol', '>', 1)-> select('id_rol', 'ro')->get();
-                
+
                 return view('construm.formugen',compact('rol'));
             }
              else{
@@ -327,7 +327,7 @@ public function intgeneral(Request $request){
                                 DB::table('usr_rol')->insert(['usr_id'=>$value->id_usr, 'rol_id'=>$ids]);
                                //  DB::table('password_reset')->insert(['email'=>$value->email,'token'=>$value->password,'id_us'=>$value->id_usr]);
                                  DB::table('password_resets')->insert(['email'=>$email,'token'=>$password,'id_us'=>$id[0]]);
-                                 $inser=DB::table('empresa')->insert(['nomb_emp'=>$numbemp,'ciudad'=>$provi,'nit'=>$nit,'direccion'=>$direc,'foto'=>$loca ,'telefon'=>$telefo,'usr_id'=>$id[0],'activo_em'=>1,'cordenada'=>$cord]);
+                                 $inser=DB::table('empresa')->insert(['nomb_emp'=>$numbemp,'ciudad'=>$provi,'nit'=>$nit,'direccion'=>$direc,'imagen'=>$loca ,'telefon'=>$telefo,'usr_id'=>$id[0],'activo_em'=>1,'cordenada'=>$cord]);
 
                                 break;
                             }
@@ -455,11 +455,11 @@ public function intgeneral(Request $request){
      if(session()->get('id') ?? ''){
         $maxs=Rol::max('id_rol');
         if(session()->get('user_rol')->first()<=$maxs){
-                $ides=$id;
-                 $id_us=DB::table(empresa)->where('id_emp','=',$ids)->select('usr_id')->get();
-                    dd($id_us);
-                $updateemp=DB::table(empresa)->where('id_emp','=',$ids)->update(['activo_em'=>0]);
-               
+                $ids=$id;
+                 $id_us=DB::table('empresa')->where('id_emp','=',$ids)->select('usr_id')->get();
+
+                $updateemp=DB::table('empresa')->where('id_emp','=',$ids)->update(['activo_em'=>0]);
+
                 return redirect()->route('empresas')->with('info');
 
         }else

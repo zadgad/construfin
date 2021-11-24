@@ -147,7 +147,7 @@
                             $("#depst8").show("slow");
                             $("#depst9").show("slow");
                             $("#depst11").show("slow");
-                            
+
                             $("#depst14").show("slow");
                             $("#depst15").show("slow");
                         }
@@ -171,6 +171,7 @@
                             $("#depst9").show("slow");
                             $("#depst10").show("slow");
                             $("#depst14").show("slow");
+                            $("#depst15").show("slow");
 
                             }
                         if(user_rol=="Cliente"){

@@ -33,7 +33,8 @@
                         <a id="depst0" style="display: none" href="{{route('formulario')}}" class="menu-item">Añadir Usuario</a>
                         <a id="depst1" style="display: none" href="{{route('list_ad')}}" class="menu-item">Lista de Administradores</a>
                         <a id="depst2" style="display: none" href="{{route('list_em')}}" class="menu-item">Lista de Empleados</a>
-                        <a id="depst3" style="display: none" href="{{route('list')}}" class="menu-item">Lista de Clientes</a>
+                        <a id="depst7" style="display: none" href="{{route('empempl')}}" class="menu-item">Empresas y Clientes</a>
+                        {{-- <a id="depst3" style="display: none" href="{{route('list')}}" class="menu-item">Lista de Clientes</a> --}}
                         <a id="depst4" style="display: none" href="{{route('listUs')}}" class="menu-item">Lista de Usuarios Goblal</a>
 
                     </div>
@@ -44,7 +45,6 @@
                         <div class="submenu-content">
                             <a id="depst5" style="display: none" href="{{route('regiempre')}}" class="menu-item">Registrar Empresa</a>
                             <a id="depst6" style="display: none" href="{{route('empresas')}}" class="menu-item">Empresas registrados</a>
-                        <a id="depst7" style="display: none" href="{{route('empempl')}}" class="menu-item">Empresas y Empleados</a>
                             <a id="depst8" style="display: none" href="{{route('formugene')}}" class="menu-item">Formulario General</a>
 
                         </div>

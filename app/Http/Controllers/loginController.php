@@ -10,6 +10,8 @@ use App\Models\Usr_rol;
 use App\Models\Rol;
 use DB;
 use \Carbon\Carbon;
+use Session;
+
 use Symfony\Component\Console\Helper\Table;
 class loginController extends Controller
 {
@@ -36,8 +38,9 @@ class loginController extends Controller
    public function login(Request $request){
 
     if(session()->get('id')??''){
+        Session::flash('message','Error al ingresar El correo o su contraseña vuelva a intentarlo');
     return redirect()->route('login')
-    ->with('info');
+    ->with('Error al ingresar El correo o su contraseña vuelva a intentarlo');
            // if($logs=1&&$pass=1){
     // } else
     //  switch ($rol) {
@@ -105,8 +108,11 @@ class loginController extends Controller
                         return redirect()->route('inius',$nomb);
                     }
                 }
-                }else return redirect()->route('login')
-                ->with('info');
+                }else
+                Session::flash('message','Error al ingresar El correo o su contraseña vuelva a intentarlo');
+
+                return redirect()->route('login')
+                ->with('Error al ingresar El correo o su contraseña vuelva a intentarlo');
 
         }
     }

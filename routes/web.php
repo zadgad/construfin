@@ -68,7 +68,7 @@ Route::put('/sistemConstrumega/editar_empleado/{id}','App\Http\Controllers\contr
 Route::get('/sistemConstrumega/visitar_empleado','App\Http\Controllers\contrumega@vistaremp')->name('visitas');
 Route::get('/sistemConstrumega/solicitar_visita','App\Http\Controllers\contrumega@solitempre')->name('solitvisita');
 Route::post('/sistemConstrumega/registrar_empre','App\Http\Controllers\contrumega@registrarempre')->name('regiEmpre');
-Route::post('/sistemConstrumega/editar_empre','App\Http\Controllers\contrumega@editarempre')->name('editempre');
+Route::post('/sistemConstrumega/editar_empre/{id}','App\Http\Controllers\contrumega@editarempre')->name('editempre');
 Route::get('/sistemConstrumega/designar_visita','App\Http\Controllers\contrumega@designar')->name('designarV');
 Route::post('/sistemConstrumega/designar_insert','App\Http\Controllers\contrumega@insertd')->name('insertdesig');
 Route::get('/sistemConstrumega/eliminar','App\Http\Controllers\contrumega@elemp')->name('delemp');
@@ -77,7 +77,7 @@ Route::post('/sistemConstrumega/insertgen','App\Http\Controllers\contrumega@intg
 Route::get('/sistemConstrumega/regist/{id}','App\Http\Controllers\contrumega@registvis')->name('registvisit');
 Route::get('/sistemConstrumega/registrar_visit/{id}','App\Http\Controllers\contrumega@registvisitas')->name('cofirmarv');
 Route::get('/sistemConstrumega/prueb','App\Http\Controllers\contrumega@prueba')->name('prueba');
-Route::get('/sistemConstrumega/verempresa/{id}','App\Http\Controllers\cregisontrumega@trarV')->name('verempre');
+Route::get('/sistemConstrumega/verempresa/{id}','App\Http\Controllers\contrumega@registrarV')->name('verempre');
 // Auth::routes();
 
 // Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');

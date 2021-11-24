@@ -56,9 +56,6 @@
                                             {{ __('#') }}
                                         </th>
                                         <th class="text-center">
-                                              {{ __('Foto') }}
-                                        </th>
-                                        <th class="text-center">
                                           {{ __('Nombre') }}
                                         </th>
                                         <th class="text-center">
@@ -74,18 +71,18 @@
                                           {{ __('Ciudad') }}
                                         </th>
                                         <th class="text-center">
-                                            {{ __('C.I.') }}
-                                          </th>
-                                          <th class="text-center">
                                             {{ __('Nombre Cli.') }}
                                          </th>
+                                        <th class="text-center">
+                                            {{ __('Telefono_Cli') }}
+                                          </th>
                                           <th class="text-center">
                                             {{ __('Accion') }}
                                           </th>
 
                                        </tr>
-                                       
-                                       
+
+
                                       </thead>
                                 <tbody>
                                     @foreach($selec as $sel)
@@ -93,14 +90,7 @@
                                      <td class="text-center">
                                    {{ $loop->iteration }}
                                  </td>
-                                 <td>
-                                     @if(!empty($sel->imagen))
-                                     <img src="{{Storage::url($sel->imagen)}}" class="rounded-circle img-80 align-top mr-15" width="80"/>
-                                     @else
-                                     <img src="{{Storage::url('contru.jpg')}}" class="rounded-circle img-80 align-top mr-15" width="80"/>
 
-                                     @endif
-                                   </td>
                                  <td class="text-center">
                                    {{ $sel->nomb_emp}}
                                  </td>
@@ -117,10 +107,10 @@
                                    {{ $sel->ciudad }}
                                  </td>
                                  <td class="text-center">
-                                    {{ $sel->ci }}
+                                    {{ $sel->nombre }}
                                   </td>
                                   <td class="text-center">
-                                    {{ $sel->nombre }}
+                                    {{ $sel->telefono }}
                                   </td>
                                    <td class="td-actions text-right">
                                        @if ($sel->id_usr != session()->get('id')->first())
@@ -136,6 +126,7 @@
                                        <a  href="{{route('infoRut',$sel->id_usr)}}"><i class="ik ik-edit f-16 mr-15 text-green"></i></a>
                                        @endif
                                      </td>
+                                     </tr>
                              @endforeach
                                 </tbody>
                                 <tfoot>
@@ -143,9 +134,7 @@
                                         <th class="text-center">
                                             {{ __('#') }}
                                         </th>
-                                        <th class="text-center">
-                                              {{ __('Foto') }}
-                                        </th>
+
                                         <th class="text-center">
                                           {{ __('Nombre') }}
                                         </th>
@@ -162,11 +151,12 @@
                                           {{ __('Ciudad') }}
                                         </th>
                                         <th class="text-center">
-                                            {{ __('C.I.') }}
-                                          </th>
-                                          <th class="text-center">
                                             {{ __('Nombre Cli.') }}
                                          </th>
+                                        <th class="text-center">
+                                            {{ __('Telefono_Cli') }}
+                                          </th>
+
                                            <th class="text-center">
                                             {{ __('Accion') }}
                                           </th>

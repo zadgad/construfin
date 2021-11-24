@@ -26,7 +26,7 @@
                            <li class="breadcrumb-item">
                                <a href="#">Apps</a>
                            </li>
-                           <li class="breadcrumb-item active" aria-current="page">Designar Visitador</li>
+                           <li class="breadcrumb-item active" aria-current="page">Designar Empleado</li>
                        </ol>
                    </nav>
                </div>

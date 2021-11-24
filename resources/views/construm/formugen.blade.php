@@ -53,7 +53,6 @@
 
                             @endif
                             @if($rol==4)
-                            <a href="{{route('list')}}" class="btn btn-sm btn-primary">{{ __('Añadir Usua.') }}</a>
 
                             @endif
                          </div>
